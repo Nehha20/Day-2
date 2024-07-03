@@ -1,0 +1,34 @@
+#include<stdio.h>
+int IsPerfect(int iNo) {
+    int sum = 0;
+
+    for (int i = 1; i <= iNo / 2; i++) {
+        if (iNo % i == 0) {
+            sum += i;
+        }
+    }
+    return sum == iNo;
+}
+
+int RangePerfectSum(int iSt, int iEnd) {
+    int sum = 0;
+
+    for (int i = iSt; i <= iEnd; i++) {
+        if (IsPerfect(i)) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+int main() {
+    int iVal1 = 0, iVal2 = 0;
+    int Res = 0;
+
+    printf("Enter range: ");
+    scanf("%d %d", &iVal1, &iVal2);
+
+    Res = RangePerfectSum(iVal1, iVal2);
+    printf("Addition of perfect numbers is %d\n", Res);
+    return 0;
+}
