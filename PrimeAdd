@@ -11,7 +11,7 @@ int IsPrime(int iNo) {
     return 1; 
 }
 
-int RangePrimeSum(int iStart, int iEnd) {
+int RangePrimeSum(int iSt, int iEnd) {
     int sum = 0;
     for (int i = iSt; i <= iEnd; i++) {
         if (IsPrime(i)) {
