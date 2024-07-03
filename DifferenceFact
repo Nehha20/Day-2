@@ -1,0 +1,33 @@
+#include<stdio.h>
+int SmallLargeFact(int iNo){
+  int smallest = 0;
+  int largest = 0;
+
+  for(int i=2 ; i<=iNo/2 ; i++){
+    if(iNo%i==0){
+      smallest = i;
+      break;
+    }
+  }
+
+  for(int i=iNo/2 ; i>=2 ; i--){
+    if(iNo%i==0){
+      largest = i;
+      break;
+    }
+  }
+
+  if(smallest==0 || largest==0){
+    return 0;
+  }
+    return largest - smallest;
+}
+int main(){
+  int val=0;
+  int Res=0;
+  printf("Enter the no - ");
+  scanf("%d",&val);
+  Res = SmallLargeFact(val);
+  printf("Difference between Factors = %d", Res);
+  return 0;
+}
