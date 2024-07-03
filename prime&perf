@@ -1,0 +1,41 @@
+#include<stdio.h>
+int IsPrime(int iNo) {
+    if (iNo <= 1) {
+        return 0; 
+    }
+    for (int i = 2; i <= iNo / 2; i++) {
+        if (iNo % i == 0) {
+            return 0;
+        }
+    }
+    return 1; 
+}
+int IsPerfect(int iNo) {
+    int sum = 0;
+    for (int i = 1; i <= iNo / 2; i++) {
+        if (iNo % i == 0) {
+            sum += i;
+        }
+    }
+    return sum == iNo;
+}
+void RangePerfectPrime(int iSt, int iEnd) {
+    for (int i = iSt; i <= iEnd; i++) {
+        if (IsPrime(i)) {
+            printf("%d is prime number\n", i);
+        }
+        if (IsPerfect(i)) {
+            printf("%d is perfect number\n", i);
+        }
+    }
+}
+
+int main() {
+    int iVal1 = 0, iVal2 = 0;
+
+    printf("Enter range: ");
+    scanf("%d %d", &iVal1, &iVal2);
+    RangePerfectPrime(iVal1, iVal2);
+
+    return 0;
+}
