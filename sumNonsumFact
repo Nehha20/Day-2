@@ -1,0 +1,24 @@
+#include <stdio.h>
+int Factdiff(int iNo){
+  int sumFact=0;
+  int NonsumFact=0;
+
+  for(int i=1 ; i<iNo ; i++){
+    if(iNo%i==0){
+      sumFact += i;
+    }
+    else{
+      NonsumFact += i;
+    }
+  }
+  return NonsumFact - sumFact;
+}
+int main(){
+  int val=0;
+  int Res=0;
+  printf("Enter the no. = ");
+  scanf("%d", &val);
+  Res = Factdiff(val);
+  printf("The diff. is %d",Res);
+  return 0;
+}
