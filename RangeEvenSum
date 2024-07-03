@@ -1,0 +1,21 @@
+#include<stdio.h>
+int RangeEvenSum(int iStart, int iEnd) {
+    int sum = 0;
+    for (int i = iStart; i <= iEnd; i++) {
+        if (i % 2 == 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+int main() {
+    int iVal1 = 0, iVal2 = 0;
+    int Res = 0;
+
+    printf("Enter range: ");
+    scanf("%d %d", &iVal1, &iVal2);
+
+    Res = RangeEvenSum(iVal1, iVal2);
+    printf("Summation of even numbers = %d\n", Res);
+    return 0;
+}
