@@ -1,0 +1,28 @@
+#include<stdio.h>
+int IsPerfec(int iNo) {
+    int sum = 0;
+
+    for (int i = 1; i <= iNo / 2; i++) {
+        if (iNo % i == 0) {
+            sum += i;
+        }
+    }
+    return sum == iNo;
+}
+void RangePerfec(int iStart, int iEnd) {
+    for (int i = iStart; i <= iEnd; i++) {
+        if (IsPerfec(i)) {
+            printf("%d ", i);
+        }
+    }
+}
+
+int main() {
+    int iVal1 = 0, iVal2 = 0;
+    printf("Enter range: ");
+    scanf("%d %d", &iVal1, &iVal2);
+
+    RangePerfec(iVal1, iVal2);
+
+    return 0;
+}
