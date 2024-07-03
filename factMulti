@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int FactMul(int iNo) {
+    int prod = 1;
+
+    for (int i = 1; i <= iNo / 2; i++) {
+        if (iNo % i == 0) {
+            prod *= i;
+        }
+    }
+    return prod;
+}
+
+int main() {
+    int iVal = 0;
+    int iRet = 0;
+
+    printf("Enter number: ");
+    scanf("%d", &iVal);
+
+    iRet = FactMul(iVal);
+    printf("Multiplication of factors of %d is %d\n", iVal, iRet);
+
+    return 0;
+}
