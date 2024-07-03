@@ -1,0 +1,32 @@
+#include<stdio.h>
+int IsPrime(int iNo) {
+    if (iNo <= 1) {
+        return 0; 
+    }
+    for (int i = 2; i <= iNo/2; i++) {
+        if (iNo % i == 0) {
+            return 0; 
+        }
+    }
+    return 1; 
+}
+
+int RangePrimeSum(int iStart, int iEnd) {
+    int sum = 0;
+    for (int i = iSt; i <= iEnd; i++) {
+        if (IsPrime(i)) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+int main() {
+    int iVal1 = 0, iVal2 = 0;
+    int Res = 0;
+    printf("Enter range=");
+    scanf("%d %d", &iVal1, &iVal2);
+
+    Res = RangePrimeSum(iVal1, iVal2);
+    printf("Summation of prime numbers is %d\n", Res);
+    return 0;
+}
